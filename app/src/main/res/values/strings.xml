@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MVVM_Todo_App</string>
+    <string name="todo_hint_enter">Enter TODO here</string>
+    <string name="todo_add">Add TODO</string>
+    <string name="todo_press_plus">Press the + button to add a TODO item</string>
+    <string name="search_hint_todo_here">search TODO here</string>
+    <string name="failed_to_add_todo">Failed to add TODO</string>
+    <string name="todo_prompt_error">Error</string>
+    <string name="todo_prompt_ok">OK</string>
 </resources>

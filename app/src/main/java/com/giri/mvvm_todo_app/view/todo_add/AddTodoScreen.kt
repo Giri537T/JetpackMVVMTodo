@@ -24,9 +24,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
+import com.giri.mvvm_todo_app.R
 import com.giri.mvvm_todo_app.util.UiEvent
 import com.giri.mvvm_todo_app.viewmodel.AddTodoViewModel
 import kotlinx.coroutines.delay
@@ -78,7 +80,7 @@ fun AddTodoScreen(
                     viewModel.onEvent(AddTodoEvent.OnTodoChange(it))
                 },
                 placeholder = {
-                    Text(text = "Enter Todo Here")
+                    Text(text = stringResource(R.string.todo_hint_enter))
                 },
                 modifier = Modifier.fillMaxWidth()
             )
@@ -91,7 +93,7 @@ fun AddTodoScreen(
                 }
             })
             {
-                Text("Add TODO")
+                Text( stringResource(R.string.todo_add))
             }
         }
         if (isLoading) {

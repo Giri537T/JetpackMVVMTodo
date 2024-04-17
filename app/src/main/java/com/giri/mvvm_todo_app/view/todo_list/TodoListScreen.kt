@@ -29,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
@@ -37,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.giri.mvvm_todo_app.R
 import com.giri.mvvm_todo_app.util.UiEvent
 import com.giri.mvvm_todo_app.view.todo_list.TodoItem
 import com.giri.mvvm_todo_app.view.todo_list.TodoListEvent
@@ -80,7 +82,7 @@ fun TodoListScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Press the + button to add a TODO item",
+                    text = stringResource(id = R.string.todo_press_plus),
                     fontSize = 20.sp,
                     fontWeight = FontWeight(500)
                 )
@@ -97,7 +99,7 @@ fun TodoListScreen(
                 //search box
                 OutlinedTextField(
                     value = searchText, onValueChange = { searchText = it },
-                    placeholder = { Text(text = "search TODO here") },
+                    placeholder = { Text(text = stringResource(id = R.string.search_hint_todo_here)) },
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
                     keyboardActions = KeyboardActions(onDone = {
                         focusmanager.clearFocus()
@@ -125,7 +127,7 @@ fun TodoListScreen(
                 }
             }
             if (openErrorPopup){
-                ErrorPopup(message = "Failed to add TODO") {}
+                ErrorPopup(message = stringResource(id = R.string.failed_to_add_todo)) {}
             }
         }
 
@@ -138,14 +140,14 @@ fun TodoListScreen(
         AlertDialog(
             onDismissRequest = { onClose()},
             title = {
-                Text(text = "Error")
+                Text(text = stringResource(id = R.string.todo_prompt_error))
             },
             text = {
                 Text(text = message, textAlign = TextAlign.Center)
             },
             confirmButton = {
                 Button(onClick = { onClose() }) {
-                    Text(text = "OK")
+                    Text(text = stringResource(id =R.string.todo_prompt_ok))
                 }
             },
             modifier = Modifier.size(250.dp, 250.dp),
