@@ -1,4 +1,4 @@
-package com.giri.mvvm_todo_app.ui.theme
+package com.giri.mvvm_todo_app.view.theme
 
 import android.app.Activity
 import android.os.Build

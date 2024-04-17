@@ -1,4 +1,4 @@
-package com.giri.mvvm_todo_app.ui.theme
+package com.giri.mvvm_todo_app.view.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
