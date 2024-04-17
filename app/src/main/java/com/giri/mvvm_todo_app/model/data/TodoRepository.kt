@@ -1,4 +1,4 @@
-package com.giri.mvvm_todo_app.data
+package com.giri.mvvm_todo_app.model.data
 import kotlinx.coroutines.flow.Flow
 
 interface TodoRepository {

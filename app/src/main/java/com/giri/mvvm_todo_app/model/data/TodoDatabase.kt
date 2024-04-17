@@ -1,13 +1,13 @@
-package com.giri.mvvm_todo_app.data
+package com.giri.mvvm_todo_app.model.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
 @Database(
     entities = [Todo::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class TodoDatabase : RoomDatabase() {
-
     abstract val dao: TodoItemDao
 }

@@ -1,4 +1,4 @@
-package com.giri.mvvm_todo_app.data
+package com.giri.mvvm_todo_app.model.data
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -11,7 +11,7 @@ interface TodoItemDao {
     suspend fun insertTodoItemItem(todo: Todo)
 
     @Query("SELECT * FROM todo")
-    suspend fun getAllTodoItems(): Flow<List<Todo>>
+    fun getAllTodoItems(): Flow<List<Todo>>
 
 
 }

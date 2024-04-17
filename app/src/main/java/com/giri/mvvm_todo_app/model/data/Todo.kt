@@ -1,4 +1,4 @@
-package com.giri.mvvm_todo_app.data
+package com.giri.mvvm_todo_app.model.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class Todo(
     @PrimaryKey
     val id: Int? = null,
-    val todoItem: String?
+    val todoItem: String,
+    val isDone:Boolean
 )
